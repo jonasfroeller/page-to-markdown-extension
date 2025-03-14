@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Page to Markdown",
+  "version": "1.0",
+  "description": "Download web pages as Markdown",
+  "permissions": ["activeTab", "scripting", "downloads"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "dist/index.html"
+  }
+}
