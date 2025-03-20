@@ -8,6 +8,9 @@
 
 ## Usage
 
-Just clone the repository and import it at "chrome://extensions" using "Load unpacked".
+1. Just clone the repository,
+2. run `ni`
+3. run `nr build`
+4. and import it at "chrome://extensions" using "Load unpacked".
 
 ![chrome.extensions.import](./chrome.extensions.import.png)
