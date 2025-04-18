@@ -286,19 +286,21 @@ onMounted(() => {
     <div class="options">
       <label class="clean-option">
         <input type="checkbox" v-model="removeBeforeHeading">
-        <span>Remove content before first heading</span>
+        <span class="select-none">Remove content before first heading</span>
       </label>
     </div>
     <div class="button-group">
       <button @click="convertToMarkdown(false)"
         :disabled="isConverting || !isExtensionContext || status.includes('Cannot convert')" class="convert-button"
-        :title="!isExtensionContext ? 'Please load this as a Chrome extension' : ''">
+        :title="!isExtensionContext ? 'Please load this as a Chrome extension' : 
+                status.includes('Cannot convert') ? 'Cannot convert Chrome system pages' : ''">
         {{ isConverting ? 'Converting...' : 'Download Full Page' }}
       </button>
       <button @click="convertToMarkdown(true)"
         :disabled="isConverting || !isExtensionContext || status.includes('Cannot convert')"
         class="convert-button article-only"
-        :title="!isExtensionContext ? 'Please load this as a Chrome extension' : ''">
+        :title="!isExtensionContext ? 'Please load this as a Chrome extension' : 
+                status.includes('Cannot convert') ? 'Cannot convert Chrome system pages' : ''">
         {{ isConverting ? 'Converting...' : 'Download Article Only' }}
       </button>
     </div>
@@ -315,6 +317,7 @@ onMounted(() => {
   padding: 16px;
   text-align: center;
   background: #ffffff;
+  margin: 0 auto;
 }
 
 h1 {
